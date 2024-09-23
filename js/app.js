@@ -25,11 +25,11 @@ document.getElementById('noakhali-btn').addEventListener('click',function(){
     document.getElementById('noakali-fund').innerText = noakhaliNewBalnce.toFixed(2);
     document.getElementById('noakhali-input').value = '';
 
-    
-   
+    //history for nowakali
+
     const historyItems = document.createElement('div');
             historyItems.innerHTML = `
-                <div class="container mx-auto gap-y-2 border-2 rounded-xl border-lightgray border-solid p-5">
+                <div class="container mx-auto gap-y-2 border-2 rounded-xl border-lightgray border-solid p-5 my-3">
                 <h4 class="text-xl font-bold text-black ">${noakhaliInput} Taka is ${noakaliTitle}</h4>
                 <p class="text-base font-light text-lightblack ">Date : ${new Date()} </p>
             </div>
@@ -47,6 +47,7 @@ document.getElementById('noakhali-btn').addEventListener('click',function(){
         const feniInput = getInputValue('feni-input');
         const mainBalance = getTextValue('main-balance');
         const feniFund = getTextValue('feni-fund');
+        const feniTitle = document.getElementById('feni-title').innerText
 
         const remainBalance = mainBalance - feniInput;
         const reniNewBalance = feniFund + feniInput;
@@ -65,6 +66,21 @@ document.getElementById('noakhali-btn').addEventListener('click',function(){
         document.getElementById('main-balance').innerText = remainBalance.toFixed(2);
         document.getElementById('feni-fund').innerText = reniNewBalance.toFixed(2);
         document.getElementById('feni-input').value = " ";
+
+
+         //History for feni
+
+        const historyItems = document.createElement('div');
+            historyItems.innerHTML = `
+                <div class="container mx-auto gap-y-2 border-2 rounded-xl border-lightgray border-solid p-5 my-3">
+                <h4 class="text-xl font-bold text-black ">${feniInput} Taka is ${feniTitle}</h4>
+                <p class="text-base font-light text-lightblack ">Date : ${new Date()} </p>
+            </div>
+        `
+
+            const historyContainer = document.getElementById('histoy-contanier');
+            historyContainer.insertBefore(historyItems , historyContainer.firstChild)
+        
     })
 
 
@@ -74,6 +90,7 @@ document.getElementById('noakhali-btn').addEventListener('click',function(){
         const quotaInput = getInputValue('quota-input');
         const mainBalance = getTextValue('main-balance');
         const quotaFund = getTextValue('quota-fund');
+        const quotaTitle = document.getElementById('quota-title').innerText;
 
         
         const remainBalance = mainBalance - quotaInput;
@@ -93,6 +110,20 @@ document.getElementById('noakhali-btn').addEventListener('click',function(){
         document.getElementById('quota-input').value = ' ';
 
 
+          //History for Quota
+
+          const historyItems = document.createElement('div');
+          historyItems.innerHTML = `
+              <div class="container mx-auto gap-y-2 border-2 rounded-xl border-lightgray border-solid p-5 my-3">
+              <h4 class="text-xl font-bold text-black ">${quotaInput} Taka is ${quotaTitle}</h4>
+              <p class="text-base font-light text-lightblack ">Date : ${new Date()} </p>
+          </div>
+      `
+
+          const historyContainer = document.getElementById('histoy-contanier');
+          historyContainer.insertBefore(historyItems , historyContainer.firstChild)                
+
+
      })
 
 
@@ -110,7 +141,7 @@ document.getElementById('noakhali-btn').addEventListener('click',function(){
             const allCards = document.getElementById('all-card');
             allCards.classList.add('hidden');
 
-            ;
+            document.getElementById('histoy-contanier').classList.remove('hidden');
         });
 
 
@@ -124,6 +155,7 @@ document.getElementById('noakhali-btn').addEventListener('click',function(){
             
              this.classList.remove('bg-transparent');
             this.classList.add('bg-lime-400');
+            document.getElementById('histoy-contanier').classList.add('hidden');
         });
 
 
