@@ -2,7 +2,7 @@
 
     // Noakhali Card Section
 
-document.getElementById('noakhali-btn').addEventListener('click',function(){
+document.getElementById('noakhali-btn').addEventListener('click',function() {
    
 
 
@@ -38,7 +38,8 @@ document.getElementById('noakhali-btn').addEventListener('click',function(){
             const historyContainer = document.getElementById('histoy-contanier');
             historyContainer.insertBefore(historyItems , historyContainer.firstChild)
     
-})
+    my_modal_5.showModal();
+ }) 
 
 
  // Noakhali Card Section
@@ -65,7 +66,7 @@ document.getElementById('noakhali-btn').addEventListener('click',function(){
 
         document.getElementById('main-balance').innerText = remainBalance.toFixed(2);
         document.getElementById('feni-fund').innerText = reniNewBalance.toFixed(2);
-        document.getElementById('feni-input').value = " ";
+        document.getElementById('feni-input').value = '';
 
 
          //History for feni
@@ -80,6 +81,8 @@ document.getElementById('noakhali-btn').addEventListener('click',function(){
 
             const historyContainer = document.getElementById('histoy-contanier');
             historyContainer.insertBefore(historyItems , historyContainer.firstChild)
+
+            my_modal_5.showModal();
         
     })
 
@@ -107,7 +110,7 @@ document.getElementById('noakhali-btn').addEventListener('click',function(){
 
         document.getElementById('main-balance').innerText = remainBalance.toFixed(2);
         document.getElementById('quota-fund').innerText = newQuotaFund.toFixed(2);
-        document.getElementById('quota-input').value = ' ';
+        document.getElementById('quota-input').value = '';
 
 
           //History for Quota
@@ -123,7 +126,7 @@ document.getElementById('noakhali-btn').addEventListener('click',function(){
           const historyContainer = document.getElementById('histoy-contanier');
           historyContainer.insertBefore(historyItems , historyContainer.firstChild)                
 
-
+          my_modal_5.showModal();    
      })
 
 
