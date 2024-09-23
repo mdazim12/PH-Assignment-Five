@@ -94,4 +94,15 @@ document.getElementById('noakhali-btn').addEventListener('click',function(){
         allCards.classList.add('hidden');
     })
 
+    document.getElementById('btn-donate').addEventListener('click',function(){
+        const allCards = document.getElementById('all-card')
+        allCards.classList.remove('hidden');
+
+        const historyButton = document.getElementById('btn-history');
+        historyButton.classList.add('bg-transparent');
+        historyButton.classList.remove('bg-lime-400');
+        this.classList.add('bg-lime-400')
+
+    })
+
 
