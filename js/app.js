@@ -162,4 +162,16 @@ document.getElementById('noakhali-btn').addEventListener('click',function() {
         });
 
 
+        window.addEventListener('scroll', function() {
+            const headerDiv = document.querySelector('.text-center.py-5');
+            const scrollPosition = window.scrollY;
+    
+            if (scrollPosition > 50) {
+                headerDiv.classList.add('backdrop-blur-lg', 'bg-white', 'bg-opacity-50');
+            } else {
+                headerDiv.classList.remove('backdrop-blur-lg', 'bg-white', 'bg-opacity-50');
+            }
+        });
+
+
 
