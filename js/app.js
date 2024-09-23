@@ -9,6 +9,7 @@ document.getElementById('noakhali-btn').addEventListener('click',function(){
     const noakhaliInput =   getInputValue('noakhali-input');
     const mainBalance = getTextValue('main-balance');
     const noakaliFund = getTextValue('noakali-fund');
+    const noakaliTitle = document.getElementById('noakali-title').innerText;
     
     if(isNaN(noakhaliInput) || noakhaliInput < 0 || noakhaliInput === '' || mainBalance < noakhaliInput){
         alert('Please Input a valid Number')
@@ -23,6 +24,19 @@ document.getElementById('noakhali-btn').addEventListener('click',function(){
     document.getElementById('main-balance').innerText = remainBalance.toFixed(2);;
     document.getElementById('noakali-fund').innerText = noakhaliNewBalnce.toFixed(2);
     document.getElementById('noakhali-input').value = '';
+
+    
+   
+    const historyItems = document.createElement('div');
+            historyItems.innerHTML = `
+                <div class="container mx-auto gap-y-2 border-2 rounded-xl border-lightgray border-solid p-5">
+                <h4 class="text-xl font-bold text-black ">${noakhaliInput} Taka is ${noakaliTitle}</h4>
+                <p class="text-base font-light text-lightblack ">Date : ${new Date()} </p>
+            </div>
+        `
+
+            const historyContainer = document.getElementById('histoy-contanier');
+            historyContainer.insertBefore(historyItems , historyContainer.firstChild)
     
 })
 
@@ -95,6 +109,8 @@ document.getElementById('noakhali-btn').addEventListener('click',function(){
             
             const allCards = document.getElementById('all-card');
             allCards.classList.add('hidden');
+
+            ;
         });
 
 
