@@ -82,27 +82,33 @@ document.getElementById('noakhali-btn').addEventListener('click',function(){
      })
 
 
-    //  Toggle button 
+  
+   
+      //Toggle button
+    
+        document.getElementById('btn-history').addEventListener('click', function() {
+            const donateButton = document.getElementById('btn-donate');
+            donateButton.classList.remove('bg-primary', 'bg-lime-400');
+            donateButton.classList.add('bg-transparent');
+            this.classList.remove('bg-transparent');
+             this.classList.add('bg-lime-400');
+            
+            const allCards = document.getElementById('all-card');
+            allCards.classList.add('hidden');
+        });
 
-    document.getElementById('btn-history').addEventListener('click',function(){
-        const donateButton = document.getElementById('btn-donate');
-        donateButton.classList.remove('bg-primary');
-        donateButton.classList.add('bg-transparent');
-        this.classList.add('bg-lime-400')
-        
-        const allCards = document.getElementById('all-card')
-        allCards.classList.add('hidden');
-    })
 
-    document.getElementById('btn-donate').addEventListener('click',function(){
-        const allCards = document.getElementById('all-card')
-        allCards.classList.remove('hidden');
+        document.getElementById('btn-donate').addEventListener('click', function() {
+            const allCards = document.getElementById('all-card');
+            
+            allCards.classList.remove('hidden');
+            const historyButton = document.getElementById('btn-history');
+            historyButton.classList.remove('bg-lime-400');
+            historyButton.classList.add('bg-transparent');
+            
+             this.classList.remove('bg-transparent');
+            this.classList.add('bg-lime-400');
+        });
 
-        const historyButton = document.getElementById('btn-history');
-        historyButton.classList.add('bg-transparent');
-        historyButton.classList.remove('bg-lime-400');
-        this.classList.add('bg-lime-400')
-
-    })
 
 
