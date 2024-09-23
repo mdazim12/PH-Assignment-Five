@@ -1,5 +1,6 @@
    
 
+    // Noakhali Card Section
 
 document.getElementById('noakhali-btn').addEventListener('click',function(){
    
@@ -15,7 +16,6 @@ document.getElementById('noakhali-btn').addEventListener('click',function(){
     }
 
     
-
     const remainBalance = mainBalance - noakhaliInput;
     const noakhaliNewBalnce = noakaliFund + noakhaliInput;
    
@@ -25,3 +25,60 @@ document.getElementById('noakhali-btn').addEventListener('click',function(){
     document.getElementById('noakhali-input').value = '';
     
 })
+
+
+ // Noakhali Card Section
+
+    document.getElementById('feni-btn').addEventListener('click',function(){
+        const feniInput = getInputValue('feni-input');
+        const mainBalance = getTextValue('main-balance');
+        const feniFund = getTextValue('feni-fund');
+
+        const remainBalance = mainBalance - feniInput;
+        const reniNewBalance = feniFund + feniInput;
+
+
+        // All validation
+
+        if(isNaN(feniInput) || feniInput < 0 || feniInput === '' || mainBalance < feniInput ){
+            alert('Please Input a Valid Number')
+            return;
+        }
+
+
+        //Update thhe Dom for feni
+
+        document.getElementById('main-balance').innerText = remainBalance.toFixed(2);
+        document.getElementById('feni-fund').innerText = reniNewBalance.toFixed(2);
+        document.getElementById('feni-input').value = " ";
+    })
+
+
+     //  Quota Movement Card Section
+
+     document.getElementById('quota-btn').addEventListener('click',function(){
+        const quotaInput = getInputValue('quota-input');
+        const mainBalance = getTextValue('main-balance');
+        const quotaFund = getTextValue('quota-fund');
+
+        
+        const remainBalance = mainBalance - quotaInput;
+        const newQuotaFund = quotaFund + quotaInput;
+
+        // All validation
+
+        if(isNaN(quotaInput) || quotaInput < 0 || quotaInput === '' || mainBalance < quotaInput ){
+            alert('Please Input a Valid Number')
+            return;
+        }
+
+        // Update the DOM for quota movment
+
+        document.getElementById('main-balance').innerText = remainBalance.toFixed(2);
+        document.getElementById('quota-fund').innerText = newQuotaFund.toFixed(2);
+        document.getElementById('quota-input').value = ' ';
+
+
+     })
+
+
